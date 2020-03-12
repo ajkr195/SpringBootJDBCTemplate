@@ -1,49 +1,77 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8" />
-<title>Edit Sale</title>
+<title>Spring Boot Thymeleaf + Spring Security</title>
+<div th:replace="fragments/header :: header" />
 </head>
 <body>
-    <div align="center">
-        <h1>Edit Sale</h1>
-        <br />
-        <form action="#" th:action="@{/update}" th:object="${appuser}"
-            method="post">
-            <table border="0" cellpadding="10">
-                <tr>
-                    <td>ID:</td>
-                    <td><input type="text" th:field="*{id}" readonly="readonly" /></td>
-                </tr>            
-                <tr>
-                    <td>username:</td>
-                    <td><input type="text" th:field="*{username}" /></td>
-                </tr>
-                <tr>
-                    <td>password:</td>
-                    <td><input type="text" th:field="*{password}" /></td>
-                </tr>
-                <tr>
-                    <td>useremail:</td>
-                    <td><input type="text" th:field="*{useremail}" /></td>
-                </tr>  
-                <tr>
-                    <td>userfirstname:</td>
-                    <td><input type="text" th:field="*{userfirstname}" /></td>
-                </tr>  
-                <tr>
-                    <td>userlastname:</td>
-                    <td><input type="text" th:field="*{userlastname}" /></td>
-                </tr>  
-                <tr>
-                    <td>useraddress:</td>
-                    <td><input type="text" th:field="*{useraddress}" /></td>
-                </tr>                            
-                <tr>
-                    <td colspan="2"><button type="submit">Save</button> </td>
-                </tr>
-            </table>
-        </form>
-    </div>
+	<div class="container">
+		<div class="card-header bg-primary text-white py-0"
+			style="text-align: center">
+			<h6>
+				<b>Edit User</b>
+			</h6>
+		</div>
+		<hr />
+		<form action="#" th:action="@{/update}" th:object="${appuser}"
+			method="post">
+			<div class="row">
+				<label class="col-md-3 text-right" for="id">Id: </label>
+				<div class="col-md-7 pull-left">
+					<input class="form-control" type="text" th:field="*{id}"
+						readonly="readonly" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-md-3 text-right" for="username">Username:
+				</label>
+				<div class="col-md-7 pull-left">
+					<input class="form-control" type="text" th:field="*{username}" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-md-3 text-right" for="password">Password:
+				</label>
+				<div class="col-md-7 pull-left">
+					<input class="form-control" type="text" th:field="*{password}" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-md-3 text-right" for="useremail">Email: </label>
+				<div class="col-md-7 pull-left">
+					<input class="form-control" type="text" th:field="*{useremail}" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-md-3 text-right" for="userfirstname">First
+					name: </label>
+				<div class="col-md-7 pull-left">
+					<input class="form-control" type="text" th:field="*{userfirstname}" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-md-3 text-right" for="userlastname">Last
+					name: </label>
+				<div class="col-md-7 pull-left">
+					<input class="form-control" type="text" th:field="*{userlastname}" />
+				</div>
+			</div>
+			<div class="row">
+				<label class="col-md-3 text-right" for="useraddress">Address:
+				</label>
+				<div class="col-md-7 pull-left">
+					<input class="form-control" type="text" th:field="*{useraddress}" />
+				</div>
+			</div>
+			<div class="col-md-4">
+				<button class="btn btn-sm btn-danger btn-space float-right"
+					type="submit">
+					<span class="fa fa-check"></span> Submit
+				</button>
+			</div>
+		</form>
+	</div>
+	<div th:replace="fragments/footer :: footer" />
 </body>
+
+</html>

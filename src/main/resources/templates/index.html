@@ -1,45 +1,51 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
-<title>Sales Manager Application</title>
+<title>Spring Boot Thymeleaf + Spring Security</title>
+<div th:replace="fragments/header :: header" />
 </head>
 <body>
-<div align="center">
-    <h1>Sales Records</h1>
-    <a href="/new" class="btn btn-sm btn-primary">Add New User</a>
-    <br/><br/>
-    <table border="1" cellpadding="10">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>username</th>
-                <th>password</th>
-                <th>useremail</th>
-                 <th>userfirstname</th>
-                  <th>userlastname</th>
-                   <th>useraddress</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="appuser : ${listAppUser}">
-                <td th:text="${appuser.id}">ID</td>
-                <td th:text="${appuser.username}">username</td>
-                <td th:text="${appuser.password}">password</td>
-                <td th:text="${appuser.useremail}">useremail</td>
-                  <td th:text="${appuser.userfirstname}">userfirstname</td>
-                    <td th:text="${appuser.userlastname}">userlastname</td>
-                      <td th:text="${appuser.useraddress}">useraddress</td>
-                <td>
-                    <a th:href="@{'/edit/' + ${appuser.id}}">Edit</a>
-                    &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/delete/' + ${appuser.id}}">Delete</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>   
+	<div class="container">
+		<div class="card-header bg-primary text-white py-0"
+			style="text-align: center">
+			<h6>
+				<b>User Management</b>
+			</h6>
+		</div>
+		<br> <a href="/new" class="btn btn-sm btn-primary">Add New
+			User</a> <br />
+		<br />
+		<table id="tableitems"
+			class="table table-condensed table-hover table-responsive-sm  table_morecondensed width=80%">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>username</th>
+					<th>password</th>
+					<th>useremail</th>
+					<th>userfirstname</th>
+					<th>userlastname</th>
+					<th>useraddress</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="appuser : ${listAppUser}">
+					<td th:text="${appuser.id}">ID</td>
+					<td th:text="${appuser.username}">username</td>
+					<td th:text="${appuser.password}">password</td>
+					<td th:text="${appuser.useremail}">useremail</td>
+					<td th:text="${appuser.userfirstname}">userfirstname</td>
+					<td th:text="${appuser.userlastname}">userlastname</td>
+					<td th:text="${appuser.useraddress}">useraddress</td>
+					<td><a th:href="@{'/edit/' + ${appuser.id}}">Edit</a>
+						&nbsp;&nbsp;&nbsp; <a th:href="@{'/delete/' + ${appuser.id}}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+<div th:replace="fragments/footer :: footer" />
 </body>
+
 </html>
