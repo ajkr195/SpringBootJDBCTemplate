@@ -1,0 +1,55 @@
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+}
+
+
+.navbar {
+    min-height: 10px;
+}
+.table td, .table th {
+/* 	white-space: nowrap; */
+	width: 1%;
+}
+tr {
+   line-height: 10px;
+   min-height: 10px;
+   height: 10px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
+	{
+	background-color: #FFFF00;
+	color: #FFC0CB;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+	background-color: #33BEFF;
+	text-decoration: none;
+}
+
+.dropdown-menu>a:hover {
+	background-color: #33BEFF;
+	text-decoration: none;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+	/*background-color: #33BEFF;*/
+/* 	background-color: #33BEFF */
+}
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 25px; */
+	line-height: 20px;
+	background-color: #f5f5f5;
+	text-align: center;
+}
